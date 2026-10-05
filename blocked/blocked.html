@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Purge</title>
+
+  <link rel="stylesheet" href="blocked.css">
+
+</head>
+
+<body>
+
+  <main>
+
+    <!-- SCREEN 1: trigger + urge -->
+
+    <section id="screen-start" class="screen active">
+
+      <h1>
+        STOP.
+    </h1>
+
+      <p class="subtitle">You blocked <strong id="site"></strong> for a reason.</p>
+
+      <h2>What's triggering you right now?</h2>
+      <div class="choices">
+        <label><input type="radio" name="trigger" value="Boredom"><span class="pill">Boredom</span></label>
+        <label><input type="radio" name="trigger" value="Stress"><span class="pill">Stress</span></label>
+        <label><input type="radio" name="trigger" value="Loneliness"><span class="pill">Loneliness</span></label>
+        <label><input type="radio" name="trigger" value="Habit"><span class="pill">Habit</span></label>
+        <label><input type="radio" name="trigger" value="Social media"><span class="pill">Social media</span></label>
+        <label><input type="radio" name="trigger" value="Other"><span class="pill">Other</span></label>
+      </div>
+
+      <h2>How strong is the urge?</h2>
+      <div class="slider-row">
+        <input type="range" id="urge-before" min="1" max="10" value="5">
+        <output id="urge-before-value">5</output>
+      </div>
+
+      <button id="start-reset" class="primary" disabled>START RESET</button>
+    </section>
+
+    <!-- SCREEN 2: step 1, countdown -->
+    <section id="screen-step1" class="screen">
+      <p class="step-label">Step 1 of 4</p>
+      <h1>Put your device down.</h1>
+      <p class="subtitle">Take your hands off the keyboard. Just breathe.</p>
+      <div id="countdown">10</div>
+    </section>
+
+    <!-- SCREEN 3: step 2, leave the room -->
+    <section id="screen-step2" class="screen">
+      <p class="step-label">Step 2 of 4</p>
+      <h1>Leave the room.</h1>
+      <p class="subtitle">Get up and go somewhere else. Press done when you've moved.</p>
+      <button id="step2-done" class="primary">DONE</button>
+    </section>
+
+    <!-- SCREEN 4: step 3, choose an activity -->
+    <section id="screen-step3" class="screen">
+      <p class="step-label">Step 3 of 4</p>
+      <h1>Do something else.</h1>
+      <p class="subtitle">What are you going to do instead?</p>
+      <div id="activities" class="choices">
+        <button class="pill">Walk</button>
+        <button class="pill">Exercise</button>
+        <button class="pill">Read</button>
+        <button class="pill">Study</button>
+        <button class="pill">Shower</button>
+        <button class="pill">Pray/reflect</button>
+        <button class="pill">Other</button>
+      </div>
+    </section>
+
+    <!-- SCREEN 5: step 4, check in -->
+    <section id="screen-step4" class="screen">
+      <p class="step-label">Step 4 of 4</p>
+      <h1>Check in.</h1>
+      <h2>How strong is the urge now?</h2>
+      <div class="slider-row">
+        <input type="range" id="urge-after" min="1" max="10" value="5">
+        <output id="urge-after-value">5</output>
+      </div>
+      <div class="button-row">
+        <button id="btn-good" class="primary">I'M GOOD</button>
+        <button id="btn-struggling" class="primary secondary">I'M STILL STRUGGLING</button>
+      </div>
+    </section>
+
+    <!-- SCREEN 6: result -->
+    <section id="screen-result" class="screen">
+      <h1 id="result-title"></h1>
+      <p id="result-numbers" class="result-numbers"></p>
+      <p id="result-message" class="subtitle"></p>
+    </section>
+
+  </main>
+  <script src="blocked.js"></script>
+</body>
+</html>

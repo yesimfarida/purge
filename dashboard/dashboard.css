@@ -1,0 +1,77 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #111;
+  color: #fff;
+}
+
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+h1 { margin: 0; letter-spacing: 3px; }
+.streak { font-size: 1.4rem; font-weight: 700; }
+
+h2 {
+  font-size: 0.85rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 40px 0 12px;
+}
+
+/* The three headline cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.card {
+  background: #1c1c1c;
+  border-radius: 12px;
+  padding: 20px 12px;
+  text-align: center;
+}
+.big { font-size: 2.2rem; font-weight: 800; }
+.label { color: #999; font-size: 0.85rem; margin-top: 4px; }
+
+/* Pattern rows */
+.row {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid #2a2a2a;
+}
+.row span { color: #aaa; }
+
+/* Trigger bars */
+.bar-row {
+  display: grid;
+  grid-template-columns: 110px 1fr 30px;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.bar-track { background: #1c1c1c; border-radius: 999px; height: 12px; }
+.bar-fill { background: #e63946; border-radius: 999px; height: 100%; }
+
+.link-button {
+  margin-top: 48px;
+  background: none;
+  border: none;
+  color: #777;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.link-button:hover { color: #fff; }

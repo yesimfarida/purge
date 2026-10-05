@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Purge",
+  "version": "0.1.0",
+  "description": "Creates friction between you and the sites you're trying to avoid.",
+  "permissions": ["webNavigation", "storage"],
+  "background": {
+    "service_worker": "background/background.js"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Purge"
+  },
+  "options_page": "settings/settings.html"
+}

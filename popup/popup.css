@@ -1,0 +1,32 @@
+body {
+  width: 260;
+  margin: 0;
+  padding: 20px;
+  font-family: system-ui, sans-serif;
+  background: #111;
+  color: #fff;
+  text-align: center;
+}
+h1 { margin: 0 0 12px; letter-spacing: 3px; font-size: 1.2rem; }
+.streak { font-size: 1.8rem; font-weight: 800; margin-bottom: 12px; }
+p { margin: 6px 0; color: #aaa; }
+p strong { color: #fff; }
+button {
+  width: 100%;
+  margin-top: 16px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #e63946;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button.link {
+  background: none;
+  color: #888;
+  font-weight: 400;
+  margin-top: 8px;
+}
+button.link:hover { color: #fff; }

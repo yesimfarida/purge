@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Purge Settings</title>
+  <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+  <main>
+    <h1>SETTINGS</h1>
+
+    <h2>Blocked websites</h2>
+    <div id="site-list"></div>
+
+    <form id="add-form">
+      <input type="text" id="site-input" placeholder="example.com" autocomplete="off">
+      <button type="submit" class="primary">+ Add website</button>
+    </form>
+    <p id="message" class="message"></p>
+
+    <h2>Protection</h2>
+    <label class="toggle">
+      <input type="checkbox" id="blockAutomatically">
+      <span>Block automatically</span>
+    </label>
+    <label class="toggle">
+      <input type="checkbox" id="recordAttempts">
+      <span>Record blocked attempts</span>
+    </label>
+    <label class="toggle">
+      <input type="checkbox" id="strictMode">
+      <span>Strict mode</span>
+    </label>
+    <p class="hint">
+      Strict mode adds friction: removing a site or turning off protection
+      means typing a confirmation phrase first. It can't make Purge impossible
+      to bypass, since you own your browser, but it gives you a moment to think.
+    </p>
+
+    <h2>Your data</h2>
+    <p class="hint">Everything is stored only in this browser. Nothing is sent anywhere.</p>
+    <button id="delete-data" class="danger">Delete all my data</button>
+  </main>
+
+  <script src="../shared/utils.js"></script>
+  <script src="settings.js"></script>
+</body>
+</html>

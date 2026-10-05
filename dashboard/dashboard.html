@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Purge Dashboard</title>
+
+  <link rel="stylesheet" href="dashboard.css">
+
+</head>
+
+<body>
+
+  <main>
+
+    <header>
+
+      <h1>PURGE</h1>
+
+      <div class="streak">🔥 <span id="streak">0</span> day streak</div>
+    
+    </header>
+
+
+    <section class="cards">
+
+      <div class="card">
+
+        <div class="big" id="attempts">0</div>
+
+        <div class="label">Blocked attempts</div>
+
+      </div>
+
+      <div class="card">
+
+        <div class="big" id="interrupted">0</div>
+
+        <div class="label">Urges interrupted</div>
+
+      </div>
+
+      <div class="card">
+
+        <div class="big" id="success-rate">0%</div>
+
+        <div class="label">Successful resets</div>
+
+      </div>
+      
+    </section>
+
+    <h2>Your patterns</h2>
+    <section class="patterns">
+      <div class="row"><span>Most common trigger</span><strong id="top-trigger">—</strong></div>
+      <div class="row"><span>Most risky time</span><strong id="risky-time">—</strong></div>
+      <div class="row"><span>Average urge</span><strong id="avg-urge">—</strong></div>
+      <div class="row"><span>Best intervention</span><strong id="best-activity">—</strong></div>
+    </section>
+
+    <h2>Triggers</h2>
+    <div id="trigger-bars"></div>
+
+    <button id="reset-streak" class="link-button">Reset my streak</button>
+  </main>
+
+  <script src="../shared/utils.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>
