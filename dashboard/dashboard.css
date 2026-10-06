@@ -75,3 +75,8 @@ h2 {
   font-size: 0.9rem;
 }
 .link-button:hover { color: #fff; }
+
+@media (max-width: 480px) {
+  .cards { grid-template-columns: 1fr; }
+  header { flex-direction: column; gap: 8px; }
+}

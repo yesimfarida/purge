@@ -108,3 +108,7 @@ async function saveSession(newSession) {
   sessions.push(newSession);
   await chrome.storage.local.set({ sessions });
 }
+document.getElementById("close-tab").addEventListener("click", async () => {
+  const tab = await chrome.tabs.getCurrent();
+  chrome.tabs.remove(tab.id);
+});

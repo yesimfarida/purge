@@ -1,93 +1,333 @@
-* { box-sizing: border-box; }
+/* =========================
+   PURGE - BLOCKED PAGE
+   ========================= */
+
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
   min-height: 100vh;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: system-ui, sans-serif;
-  background: #111;
-  color: #fff;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  background: #0b1020;
+  color: #f5f7ff;
 }
 
 main {
-  width: 100%;
-  max-width: 560px;
-  padding: 24px;
+  width: min(680px, 92%);
+  padding: 40px 0;
+}
+
+/* =========================
+   SCREENS
+   ========================= */
+
+.screen {
+  display: none;
   text-align: center;
 }
 
-/* Only the active screen is visible */
-.screen { display: none; }
-.screen.active { display: block; }
-
-h1 { font-size: 3rem; margin: 0 0 8px; }
-h2 { font-size: 1.1rem; margin: 32px 0 12px; color: #ccc; font-weight: 600; }
-.subtitle { color: #aaa; margin: 0; }
-.step-label {
-  color: #888;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 0.8rem;
+.screen.active {
+  display: block;
+  animation: fadeIn 0.4s ease;
 }
 
-/* Pills (trigger + activity choices) */
+/* =========================
+   TEXT
+   ========================= */
+
+h1 {
+  margin: 0 0 16px;
+
+  font-size: clamp(42px, 8vw, 72px);
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+
+h2 {
+  margin: 32px 0 16px;
+
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.subtitle {
+  margin: 0 auto;
+  max-width: 520px;
+
+  color: #9da7bd;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.step-label {
+  margin-bottom: 12px;
+
+  color: #5f8cff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+strong {
+  color: #ffffff;
+}
+
+/* =========================
+   CHOICES
+   ========================= */
+
 .choices {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
   justify-content: center;
-  margin-top: 24px;
+  gap: 10px;
+
+  margin-top: 18px;
 }
-.choices input { display: none; }
-.pill {
-  display: inline-block;
-  padding: 10px 18px;
-  border: 1px solid #444;
-  border-radius: 999px;
-  background: transparent;
-  color: #fff;
-  font-size: 1rem;
+
+.choices label {
   cursor: pointer;
 }
-.pill:hover { border-color: #fff; }
-input:checked + .pill { background: #fff; color: #111; }
 
-/* Sliders */
+/* Hide the actual radio button */
+.choices input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Choice pills */
+.pill {
+  display: inline-block;
+
+  padding: 11px 18px;
+
+  border: 1px solid #303a52;
+  border-radius: 999px;
+
+  background: #151c30;
+  color: #cbd3e6;
+
+  font-size: 15px;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.15s,
+    background 0.15s,
+    transform 0.1s;
+}
+
+/* Hover */
+.pill:hover {
+  border-color: #5f8cff;
+  background: #1b2640;
+}
+
+/* Selected radio option */
+.choices input[type="radio"]:checked + .pill {
+  border-color: #5f8cff;
+  background: #1d3a78;
+  color: white;
+}
+
+/* Activity buttons */
+button.pill {
+  font-family: inherit;
+}
+
+/* =========================
+   SLIDERS
+   ========================= */
+
 .slider-row {
   display: flex;
   align-items: center;
-  gap: 16px;
-}
-.slider-row input { flex: 1; }
-.slider-row output {
-  font-size: 2rem;
-  font-weight: 700;
-  min-width: 2ch;
+  gap: 18px;
+
+  width: min(500px, 100%);
+  margin: 20px auto 30px;
 }
 
-/* Buttons */
-.primary {
-  margin-top: 32px;
-  padding: 14px 32px;
-  font-size: 1.1rem;
-  font-weight: 700;
-  border: none;
-  border-radius: 8px;
-  background: #e63946;
-  color: #fff;
+input[type="range"] {
+  flex: 1;
+
+  accent-color: #5f8cff;
   cursor: pointer;
 }
-.primary:disabled { background: #333; color: #777; cursor: not-allowed; }
-.secondary { background: transparent; border: 1px solid #555; }
-.button-row {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  flex-wrap: wrap;
+
+output {
+  min-width: 42px;
+
+  padding: 8px 12px;
+
+  border-radius: 10px;
+
+  background: #151c30;
+  color: white;
+
+  font-size: 18px;
+  font-weight: 700;
 }
 
-/* Countdown + result */
-#countdown { font-size: 7rem; font-weight: 800; margin-top: 24px; }
-.result-numbers { font-size: 2.5rem; font-weight: 800; margin: 24px 0; }
+/* =========================
+   BUTTONS
+   ========================= */
+
+button {
+  font-family: inherit;
+}
+
+.primary {
+  padding: 13px 24px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #5f8cff;
+  color: white;
+
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.1s,
+    opacity 0.15s,
+    background 0.15s;
+}
+
+.primary:hover:not(:disabled) {
+  background: #729aff;
+}
+
+.primary:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.primary:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.secondary {
+  background: #252d40;
+}
+
+.secondary:hover {
+  background: #30394e;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  margin-top: 28px;
+}
+
+/* =========================
+   COUNTDOWN
+   ========================= */
+
+#countdown {
+  margin-top: 40px;
+
+  font-size: 100px;
+  font-weight: 800;
+
+  color: #5f8cff;
+
+  animation: pulse 1s ease-in-out infinite;
+}
+
+/* =========================
+   RESULT
+   ========================= */
+
+.result-numbers {
+  margin: 24px 0 12px;
+
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* =========================
+   ANIMATIONS
+   ========================= */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes pulse {
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 600px) {
+  main {
+    width: 90%;
+    padding: 30px 0;
+  }
+
+  h1 {
+    font-size: 42px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+  }
+
+  .button-row {
+    flex-direction: column;
+  }
+
+  .button-row .primary {
+    width: 100%;
+  }
+
+  #countdown {
+    font-size: 80px;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+   ========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
