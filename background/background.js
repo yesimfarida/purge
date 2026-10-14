@@ -1,7 +1,5 @@
 importScripts("../shared/utils.js");
 
-const DEFAULT_BLOCKED_SITES = ["example.com", "example.org"];
-
 // On install/reload: set up any data that doesn't exist yet
 chrome.runtime.onInstalled.addListener(async () => {
   const { blockedSites, streakStart, settings } = await chrome.storage.local.get([
@@ -10,7 +8,7 @@ chrome.runtime.onInstalled.addListener(async () => {
     "settings",
   ]);
   if (!blockedSites) {
-    await chrome.storage.local.set({ blockedSites: DEFAULT_BLOCKED_SITES });
+    await chrome.storage.local.set({ blockedSites: STARTER_SITES });
   }
   if (!streakStart) {
     await chrome.storage.local.set({ streakStart: dateString() });

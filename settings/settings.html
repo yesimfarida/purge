@@ -13,6 +13,8 @@
     <h2>Blocked websites</h2>
     <div id="site-list"></div>
 
+    <button id="add-starter" class="remove">Add the starter list</button>
+
     <form id="add-form">
       <input type="text" id="site-input" placeholder="example.com" autocomplete="off">
       <button type="submit" class="primary">+ Add website</button>
@@ -37,6 +39,14 @@
       means typing a confirmation phrase first. It can't make Purge impossible
       to bypass, since you own your browser, but it gives you a moment to think.
     </p>
+
+    <p class="hint">
+
+  Chrome doesn't run extensions in Incognito windows by default. To block there
+  too, open chrome://extensions, click Details on Purge, and turn on
+  "Allow in Incognito".
+  
+</p>
 
     <h2>Your data</h2>
     <p class="hint">Everything is stored only in this browser. Nothing is sent anywhere.</p>

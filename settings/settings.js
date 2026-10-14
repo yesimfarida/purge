@@ -86,7 +86,19 @@ document.getElementById("add-form").addEventListener("submit", (event) => {
   input.value = "";
 });
 
+// ---------- Starter list ----------
+document.getElementById("add-starter").addEventListener("click", async () => {
+  const { blockedSites = [] } = await chrome.storage.local.get("blockedSites");
+  const merged = [...new Set([...blockedSites, ...STARTER_SITES])];
+  const added = merged.length - blockedSites.length;
+
+  await chrome.storage.local.set({ blockedSites: merged });
+  showMessage(added > 0 ? `Added ${added} sites.` : "Starter list already added.");
+  renderSites();
+});
+
 // ---------- Protection toggles ----------
+
 const toggleKeys = ["blockAutomatically", "recordAttempts", "strictMode"];
 
 async function loadToggles() {

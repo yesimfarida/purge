@@ -170,3 +170,25 @@ function cleanDomain(input) {
   if (!hostname.includes(".") || hostname.endsWith(".")) return null;
   return hostname;
 }
+// ---------- Starter blocklist ----------
+const STARTER_SITES = [
+  "pornhub.com",
+  "xvideos.com",
+  "xnxx.com",
+  "xhamster.com",
+  "redtube.com",
+  "youporn.com",
+  "spankbang.com",
+  "eporner.com",
+  "tube8.com",
+  "brazzers.com",
+  "motherless.com",
+  "rule34.xxx",
+  "chaturbate.com",
+  "stripchat.com",
+  "cam4.com",
+  "bongacams.com",
+  "livejasmin.com",
+  "onlyfans.com",
+  "fansly.com",
+];

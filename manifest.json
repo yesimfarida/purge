@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Purge",
-  "version": "0.1.0",
-  "description": "Creates friction between you and the sites you're trying to avoid.",
+  "version": "1.0.0",
+  "description": "Block adult sites, interrupt the urge with a short reset, and track your patterns. Everything stays on your device.",
   "permissions": ["webNavigation", "storage"],
   "background": {
     "service_worker": "background/background.js"
